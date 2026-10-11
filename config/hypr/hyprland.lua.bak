@@ -1,0 +1,49 @@
+-- Hyprland Lua Configuration
+
+-- Variables
+local mainMod = "SUPER"
+local terminal = "ghostty"
+local fileManager = "Thunar"
+local browser = "brave --password-store=basic"
+local menu = "rofi -show drun"
+local pwd = "proton-pass"
+local snip = "hyprsnipper"
+
+-- Monitor Setup
+hl.monitor({
+    output = "",
+    mode = "1920x1080@60",
+    position = "auto",
+    scale = 1
+})
+
+-- Input Settings
+hl.config({
+    input = {
+        left_handed = true
+    }
+})
+
+-- Keybindings
+hl.bind(mainMod .. " + T", hl.dsp.exec_cmd(terminal))
+hl.bind(mainMod .. " + C", hl.dsp.window.close())
+hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch exit"))
+hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
+hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
+hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
+hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(browser))
+hl.bind(mainMod .. " + M", hl.dsp.exec_cmd(browser .. " https://mail.proton.me"))
+hl.bind(mainMod .. " + A", hl.dsp.exec_cmd(browser .. " https://gemini.google.com"))
+hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("waypaper"))
+hl.bind(mainMod .. " + S", hl.dsp.exec_cmd(pwd))
+hl.bind(mainMod .. " + D", hl.dsp.exec_cmd(snip))
+hl.bind(mainMod .. " + SHIFT + R", hl.dsp.exec_cmd("hyprctl reload"))
+
+-- Workspaces
+hl.bind(mainMod .. " + 1", hl.dsp.focus({ workspace = "1" }))
+hl.bind(mainMod .. " + 2", hl.dsp.focus({ workspace = "2" }))
+hl.bind(mainMod .. " + 3", hl.dsp.focus({ workspace = "3" }))
+hl.bind(mainMod .. " + 4", hl.dsp.focus({ workspace = "4" }))
+
+-- Lock Screen
+hl.bind("SUPER + SHIFT + A", hl.dsp.exec_cmd("hyprlock"))

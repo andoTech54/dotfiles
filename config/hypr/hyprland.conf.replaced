@@ -1,0 +1,49 @@
+
+monitor = , 1920x1080@60, auto, 1
+
+input {
+    left_handed = true
+}
+
+$mainMod = SUPER
+$terminal = ghostty
+$fileManager = Thunar
+$browser = brave --password-store=basic
+$menu = rofi -show drun
+$pwd = proton-pass
+$snip = hyprsnipper
+
+# --- Keybindings ---
+bind = $mainMod, T, exec, $terminal
+bind = $mainMod, C, killactive,
+bind = $mainMod, Q, exec, command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch exit
+bind = $mainMod, E, exec, $fileManager
+bind = $mainMod, V, togglefloating,
+bind = $mainMod, R, exec, $menu
+bind = $mainMod, B, exec, $browser
+bind = $mainMod, M, exec, $browser https://mail.proton.me
+bind = $mainMod, A, exec, $browser https://gemini.google.com
+bind = $mainMod, W, exec, waypaper
+bind = $mainMod, S, exec, $pwd
+bind = $mainMod, D, exec, $snip
+bind = $mainMod SHIFT, R, exec, hyprctl reload
+
+# Workspaces
+bind = $mainMod, 1, workspace, 1
+bind = $mainMod, 2, workspace, 2
+bind = $mainMod, 3, workspace, 3
+bind = $mainMod, 4, workspace, 4
+
+# Lock Screen
+bind = SUPER SHIFT, A, exec, hyprlock
+
+# --- Clean Autostart Apps ---
+exec-once = /usr/bin/kwalletd6
+exec-once = /usr/lib/polkit-kde-authentication-agent-1
+exec-once = waybar
+exec-once = mako
+exec-once = nm-applet --indicator
+exec-once = awww-daemon
+exec-once = blueman-applet
+exec-once = hypridle
+
