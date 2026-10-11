@@ -1,0 +1,27 @@
+* {
+active-background: #313244;
+active-foreground: #cdd6f4;
+normal-background: #1e1e2e;
+normal-foreground: #cdd6f4;
+urgent-background: #f38ba8;
+urgent-foreground: #11111b;
+
+alternate-active-background: #313244;
+alternate-active-foreground: #cdd6f4;
+alternate-normal-background: #1e1e2e;
+alternate-normal-foreground: #cdd6f4;
+alternate-urgent-background: #1e1e2e;
+alternate-urgent-foreground: #cdd6f4;
+
+selected-active-background: #b4befe;
+selected-active-foreground: #11111b;
+selected-normal-background: #b4befe;
+selected-normal-foreground: #11111b;
+selected-urgent-background: #f38ba8;
+selected-urgent-foreground: #11111b;
+
+background-color: #1e1e2e;
+background: rgba(30, 30, 46, 0.85); /* Darker, elegant background with slight transparency */
+foreground: #cdd6f4;
+border-color: #b4befe; /* Changes the outer borders to a clean lavender accent */
+}
