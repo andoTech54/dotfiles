@@ -3,28 +3,27 @@
 # Define local repository directory
 HYPR_REPO_DIR="$HOME/.config/hypr"
 
-echo "=== Starting Hyprland Config Sync ==="
+notify-send "Hyprland Sync" "Checking Hyprland configuration for updates..." -i system-run -u low
 
 # Navigate to the repo directory
 cd "$HYPR_REPO_DIR" || exit
 
 # Check for git changes
 if [ -z "$(git status --porcelain)" ]; then
-    echo "=== No changes detected in Hyprland config. Everything is clean! ==="
+    notify-send "Hyprland Sync" "No changes detected in Hyprland config." -i dialog-information
     exit 0
 fi
 
 # Stage, commit, and push
-echo "--> Changes detected. Staging files..."
 git add .
 
 TIMESTAMP=$(date "+%Y-%m-%d %H:%M:%S")
 COMMIT_MSG="Update Hyprland config: $TIMESTAMP"
 
-echo "--> Committing: '$COMMIT_MSG'..."
 git commit -m "$COMMIT_MSG"
 
-echo "--> Pushing to GitHub..."
-git push
-
-echo "=== Hyprland config synced successfully! ==="
+if git push; then
+    notify-send "Hyprland Sync" "Successfully pushed Hyprland updates to GitHub!" -i vcs-normal
+else
+    notify-send "Hyprland Sync" "Failed to push Hyprland updates to GitHub." -i dialog-error -u critical
+fi
