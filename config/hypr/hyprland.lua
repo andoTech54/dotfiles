@@ -39,8 +39,8 @@ hl.bind(mainMod .. " + D", hl.dsp.exec_cmd("hyprsnipper"))
 hl.bind(mainMod .. " + SHIFT + R", hl.dsp.exec_cmd("hyprctl reload"))
 
 -- Window Drag & Resize Mouse Bindings
-hl.exec_cmd("hyprctl keyword bindm SUPER, mouse:272, movewindow")
-hl.exec_cmd("hyprctl keyword bindm SUPER, mouse:273, resizewindow")
+hl.exec_cmd("hyprctl keyword bind SUPER SHIFT, S, exec, /home/tony/dotfiles/sync-dotfiles.sh")
+hl.exec_cmd("hyprctl keyword bind SUPER ALT, S, exec, /home/tony/.config/hypr/sync-hypr.sh")
 
 -- --- Github Scripts ---
 hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd("/home/tony/dotfiles/sync-dotfiles.sh"))
