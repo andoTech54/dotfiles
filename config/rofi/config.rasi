@@ -1,44 +1,29 @@
 /* ---- 💫 https://github.com/JaKooLit 💫 ---- */
-/* Main Config 1080p */
+/* Ja KooLit - Default 
 
-@import "~/.config/rofi/master-config.rasi" 
+* All main themes or configs are located in ~/.config/rofi/themes/
+* If you want to edit the config, that is where you should edit NOT here 
 
-/* ---- Configuration ---- */
-configuration {
-	font: "Fira Code SemiBold 12";
-}
+* To load a new theme, manually edit the file path below or choose desired theme via rofi theme selector (choose via app menu)
 
-/* ---- Window ---- */
-window {
-    width:	60%;
-}
-/* ---- Listview ---- */
-listview {
-  columns: 6;
-  lines: 4;
-  fixed-height:	true;
-}
+* Alternative way to Load (preferred) own cooked by Ja 
+* SUPER CTRL R - Choose style & SUPER CTRL SHIFT R 
 
-/* ---- Element ---- */
-element {
-  orientation: vertical;
-  padding: 12px 0px 0px 0px;
-  spacing: 6px;
-  border-radius: 12px;
-}
+* TIPS 
+* If you have edited a config, rename it with a unique name. During update, the contents of 
+* ~/.config/rofi/themes/ will be replaced. */
 
-element-icon {
-  size: 6%;
-}
+/* ---- Global Configuration Fonts ---- */
+@import "~/.config/rofi/0-shared-fonts.rasi"
 
-element-text {
-  font: "Fira Code SemiBold 12";
-  vertical-align: 0.5;
-  horizontal-align: 0.5;
-}
+/* note: Main themes in ~/.config/rofi/themes */
+/* You can manually change here or you can use rofi theme selector SUPER SHIFT E */
 
-/* ---- Custom Overrides ---- */
-button selected {
-  background-color: #b4befe;
-  text-color:       #11111b;
-}
+
+//@theme "~/.config/rofi/themes/KooL_style-4.rasi"
+
+//@theme "/home/tony/.config/rofi/themes/KooL_style-10-Fancy.rasi"
+
+//@theme "/home/tony/.config/rofi/themes/KooL_style-10-Fancy.rasi"
+
+@theme "/home/tony/.local/share/rofi/themes/KooL_style-6.rasi"
