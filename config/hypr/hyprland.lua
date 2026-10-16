@@ -42,6 +42,10 @@ hl.bind(mainMod .. " + SHIFT + R", hl.dsp.exec_cmd("hyprctl reload"))
 hl.exec_cmd("hyprctl keyword bindm SUPER, mouse:272, movewindow")
 hl.exec_cmd("hyprctl keyword bindm SUPER, mouse:273, resizewindow")
 
+-- --- Github Scripts ---
+hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd("/home/tony/dotfiles/sync-dotfiles.sh"))
+hl.bind(mainMod .. " + ALT + S", hl.dsp.exec_cmd("/home/tony/.config/hypr/sync-hypr.sh"))
+
 -- Switch workspaces with mainMod + [0-9]
 for i = 1, 9 do
     hl.bind(mainMod .. " + " .. i, hl.dsp.focus({ workspace = i }))
