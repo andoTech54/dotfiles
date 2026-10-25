@@ -28,7 +28,7 @@ hl.config({
 
 local mainMod = "SUPER"
 
--- --- Keybindings ---
+-- Keybindings ---
 
 hl.bind(mainMod .. " + T", hl.dsp.exec_cmd("ghostty"))
 hl.bind(mainMod .. " + C", hl.dsp.window.close())
@@ -36,18 +36,19 @@ hl.bind(
 	mainMod .. " + Q",
 	hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch exit")
 )
-hl.bind(mainMod .. " + E", hl.dsp.exec_cmd("Thunar"))
+hl.bind(mainMod .. " + E", hl.dsp.exec_cmd("ghostty -e nvim -c Neotree"))
+hl.bind(mainMod .. " + SHIFT + E", hl.dsp.exec_cmd("thunar"))
 hl.bind(mainMod .. " + V", hl.dsp.window.float())
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("rofi -show drun"))
-hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("brave --password-store=basic"))
-hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("brave --password-store=basic https://mail.proton.me"))
-hl.bind(mainMod .. " + A", hl.dsp.exec_cmd("brave --password-store=basic https://gemini.google.com"))
+hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("google-chrome-stable"))
+hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("google-chrome-stable --app=https://mail.proton.me"))
+hl.bind(mainMod .. " + A", hl.dsp.exec_cmd("google-chrome-stable --app=https://gemini.google.com"))
 hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("waypaper"))
 hl.bind(mainMod .. " + space", hl.dsp.exec_cmd("/home/tony/.config/hypr/scripts/WaybarStyles.sh"))
 hl.bind(mainMod .. " + S", hl.dsp.exec_cmd("proton-pass"))
 hl.bind(mainMod .. " + D", hl.dsp.exec_cmd("hyprsnipper"))
 hl.bind(mainMod .. " + SHIFT + R", hl.dsp.exec_cmd("hyprctl reload"))
-
+hl.bind(mainMod .. " + SHIFT + C", hl.dsp.exec_cmd("codium"))
 -- Window Drag & Resize Mouse Bindings
 hl.exec_cmd("hyprctl keyword bind SUPER SHIFT, S, exec, /home/tony/dotfiles/sync-dotfiles.sh")
 hl.exec_cmd("hyprctl keyword bind SUPER ALT, S, exec, /home/tony/.config/hypr/sync-hypr.sh")

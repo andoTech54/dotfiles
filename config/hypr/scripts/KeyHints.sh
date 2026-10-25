@@ -27,16 +27,15 @@ GDK_BACKEND=$BACKEND yad \
 " SHIFT K" "Searchable Keybinds" "(Search all Keybinds via rofi)" \
 " SHIFT E" "KooL Hyprland Settings Menu" "" \
 "" "" "" \
-" enter" "Terminal" "(kitty)" \
+" T" "Terminal" "(ghostty)" \
 " SHIFT enter" "DropDown Terminal" " Q to close" \
 " B" "Launch Browser" "(Default browser)" \
 " A" "Desktop Overview" "(AGS - if opted to install)" \
-" D" "Application Launcher" "(rofi-wayland)" \
+" R" "Application Launcher" "(rofi-wayland)" \
 " E" "Open File Manager" "(Thunar)" \
 " S" "Google Search using rofi" "(rofi)" \
-" T" "Global theme switcher" "(rofi)" \
-" Q" "close active window" "(not kill)" \
-" Shift Q " "kills an active window" "(kill)" \
+" C" "close active window" "(not kill)" \
+" Shift Q" "kills an active window" "(kill)" \
 " ALT mouse scroll up/down   " "Desktop Zoom" "Desktop Magnifier" \
 " Alt V" "Clipboard Manager" "(cliphist)" \
 " W" "Choose wallpaper" "(Wallpaper Menu)" \
@@ -54,7 +53,7 @@ GDK_BACKEND=$BACKEND yad \
 " CTRL SHIFT Print" "screenshot timer 10 secs " "(grim)" \
 "ALT Print" "Screenshot active window" "active window only" \
 "CTRL ALT P" "power-menu" "(wlogout)" \
-"CTRL ALT L" "screen lock" "(hyprlock)" \
+"CTRL SUPER A" "screen lock" "(hyprlock)" \
 "CTRL ALT Del" "Hyprland Exit" "(NOTE: Hyprland Will exit immediately)" \
 " SHIFT F" "Fullscreen" "Toggles to full screen" \
 " CTL F" "Fake Fullscreen" "Toggles to fake full screen" \
@@ -70,4 +69,4 @@ GDK_BACKEND=$BACKEND yad \
 " ALT E" "Rofi Emoticons" "Emoticon" \
 " H" "Launch this Quick Cheat Sheet" "" \
 "" "" "" \
-"More tips:" "https://github.com/JaKooLit/Hyprland-Dots/wiki" ""\
+"More tips:" "https://github.com/JaKooLit/Hyprland-Dots/wiki" ""
